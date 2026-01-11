@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<title>Mentoverse</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at top,#0b0f2a,#020617);
+  color:#fff;
+}
+
+/* ================= NAVBAR ================= */
+.hero-con{
+  min-height:100vh;
+  width:100%;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:600;
+}
+
+.navv{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.navv a{
+  text-decoration:none;
+  color:#fff;
+  font-size:14px;
+}
+
+.navv a span:hover{
+  border-bottom:2px solid #e4e7f0e8;
+}
+
+.primary-btn{
+  background:linear-gradient(135deg,#00f0ff,#8b5cf6);
+  border:none;
+  color:#000;
+  font-weight:600;
+  border-radius:12px;
+  padding:10px 18px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(0,240,255,.5);
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:calc(100vh - 80px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:40px;
+  gap:40px;
+}
+
+.hero-left{
+  max-width:550px;
+}
+
+.hero-left h1{
+  font-size:clamp(36px,6vw,80px);
+  color:#38bdf8;
+}
+
+.hero-left h2{
+  font-weight:400;
+  margin:10px 0;
+}
+
+.hero-left p{
+  opacity:.75;
+  margin-top:10px;
+  font-size:16px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin-top:25px;
+}
+
+.btn-primary{
+  padding:10px 22px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(90deg,#52ffb8,#4ce1ff,#a35bff);
+}
+
+.btn-secondary{
+  padding:10px 22px;
+  border-radius:999px;
+  border:1px solid rgba(137,140,255,.7);
+  cursor:pointer;
+  color:#c8ccff;
+  background:transparent;
+}
+
+/* ================= VIDEO ================= */
+.hero video{
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  object-fit:cover;
+  animation:float 4s ease-in-out infinite;
+  box-shadow:0 0 40px rgba(0,200,255,.35);
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* ================= GRADIENT TEXT ================= */
+.gradient{
+  background: linear-gradient(to right,#00aaa7,#7e42a7,#6600c5,#6070fd,#2a46ff,#0099ff);
+  background-size:200%;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation: animate-gradient 3s linear infinite;
+}
+
+@keyframes animate-gradient{
+  to{background-position:200%;}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+  }
+
+  .hero video{
+    width:260px;
+    height:260px;
+    margin-top:20px;
+  }
+
+  .navv{
+    display:none;
+  }
+}
+
+/* ===== EMPTY FEEL FIX (BACKGROUND BLOBS) ===== */
+.bg-blur{
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,#4ce1ff55,#0000);
+  filter:blur(80px);
+  z-index:-1;
+}
+
+.bg-blur.one{
+  top:10%;
+  left:5%;
+}
+
+.bg-blur.two{
+  bottom:10%;
+  right:5%;
+}
+
+/* ===== TEXT IMPROVEMENT ===== */
+.hero-left p{
+  font-size:18px;
+  line-height:1.7;
+  opacity:.85;
+  max-width:520px;
+  margin-top:14px;
+}
+
+/* ===== MENU ICON ===== */
+.menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:260px;
+  height:100vh;
+  background:#0b1020;
+  padding:30px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  transition:.4s ease;
+  z-index:100;
+}
+
+.sidebar.active{
+  left:0;
+}
+
+.sidebar a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+}
+
+.sidebar .close{
+  align-self:flex-end;
+  font-size:20px;
+  cursor:pointer;
+}
+
+
+@media(max-width:900px){
+  .navv{
+    display:none;
+  }
+  .menu-btn{
+    display:block;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<body>
+
+<div class="bg-blur one"></div>
+<div class="bg-blur two"></div>
+
+<div class="hero-con">
+
+<header class="nav">
+  <div class="logo">Mentoverse</div>
+
+  <div class="navv">
+    <a href="index.html"><span>Home</span></a>
+    <a href="mentors.html"><span>Mentor</span></a>
+    <a href="live.html"><span>Learning</span></a>
+    <a href="Analytics.html"><span>Dashboard</span></a>
+    <a href="progress.html"><span>Contact</span></a>
+    <a href="RegisterNow.html"><button class="primary-btn">Register Now</button></a>
+  </div>
+
+  <!-- HAMBURGER -->
+  <div class="menu-btn" onclick="openMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <i class="fas fa-times close" onclick="closeMenu()"></i>
+  <a href="index.html">Home</a>
+  <a href="mentors.html">Mentor</a>
+  <a href="live.html">Learning</a>
+  <a href="Analytics.html">Dashboard</a>
+  <a href="testimonials.html">Testimonials</a>
+</div>
+
+<section class="hero">
+
+  <div class="hero-left">
+    <h1>MENTOVERSE</h1>
+
+    <h2>
+      Providing <span class="gradient">the best</span> Teaching
+      <span class="gradient">Experience</span>
+    </h2>
+
+    <p>
+      Mentoverse is an AI-powered learning platform designed to transform
+      education through personalized mentoring, interactive experiences,
+      and future-ready skills  empowering learners to grow without limits.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary">Get Started</button>
+      <button class="btn-secondary">Watch Demo</button>
+    </div>
+  </div>
+
+  <video src="assets/glob.mp4" autoplay loop muted playsinline></video>
+
+</section>
+</div>
+
+<script>
+function openMenu(){
+  document.getElementById("sidebar").classList.add("active");
+}
+function closeMenu(){
+  document.getElementById("sidebar").classList.remove("active");
+}
+</script>
+
+</body>
+
+</body>
+</html>
