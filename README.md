@@ -3,6 +3,9 @@
 **MentoVerse** is a **responsive frontend website** developed during the **AT Sylani Mass IT Training Hackathon**.  
 It was built as a team project to create a clean, modern, and interactive interface for a **mentorship and learning platform**.
 
+<img width="1353" height="640" alt="image" src="https://github.com/user-attachments/assets/c1d20d5e-d496-4b34-8109-535f9678b8cf" />
+
+
 ---
 
 ## 🎯 Project Overview
@@ -38,10 +41,10 @@ It was built as a team project to create a clean, modern, and interactive interf
 
 ## 📂 How to Run Locally
 
-1. Clone the repository:
+. Clone the repository:
 ```bash
 git clone https://github.com/FarzeenFatima55/MentoVerse.git
-2.Navigate to the project directory:
+.Navigate to the project directory:
 
 cd MentoVerse
 
